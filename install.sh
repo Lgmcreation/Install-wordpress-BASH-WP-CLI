@@ -225,9 +225,12 @@ wp theme activate $foldername
 # Plugins install
 bot "J'installe les plugins"
 wp plugin install wordpress-seo --activate
-wp plugin install wps-hide-login 
 wp plugin install simple-page-ordering --activate
 wp plugin install block-bad-queries --activate
+wp plugin install sf-move-login
+wp plugin install limit-login-attempts
+wp plugin install backwpup
+wp plugin install secure-wordpress
 
 # Si on a bien une clé acf pro
 if [ -n "$acfkey" ]
