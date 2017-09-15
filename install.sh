@@ -209,9 +209,9 @@ rm -f README.md
 sed -i.bak "s/nouveausite/${title}/g" style.css
 rm -f style.css.bak
 
-#modifie mon fichier gulpfile.js (adresse dans browserSync) (pourquoi ? .bak bug ios donc supprimme le fichier .bak créé )
-sed -i.bak "s/nouveausite/${foldername}/g" gulpfile.js
-rm -f gulpfile.js.bak
+#modifie mon fichier package.json (pourquoi ? .bak bug ios donc supprimme le fichier .bak créé )
+sed -i.bak "s/nouveausite/${foldername}/g" package.json
+rm -f package.json.bak
 
 # Modifie le fichier style.sccss (bak bug macos)
 cd dev/css/
