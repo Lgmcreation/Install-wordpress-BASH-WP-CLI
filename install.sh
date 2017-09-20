@@ -181,6 +181,9 @@ define('AUTOSAVE_INTERVAL', 300 ); // seconds
 
 //Mode debug
 define('WP_DEBUG', true);
+
+//Langues
+define ('WPLANG', 'fr_FR');
 PHP
 
 # Creation base de donnée
