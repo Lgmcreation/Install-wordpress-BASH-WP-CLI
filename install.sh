@@ -166,7 +166,7 @@ wp core version
 
 # Create base configuration
 bot "Je lance la configuration"
-wp core config --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbprefix=$dbprefix --extra-php <<PHP
+wp core create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass --dbprefix=$dbprefix --extra-php <<PHP
 // Désactiver l'éditeur de thème et de plugins en administration
 define('DISALLOW_FILE_EDIT', true);
 
