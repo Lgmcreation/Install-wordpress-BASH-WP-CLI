@@ -121,7 +121,7 @@ read -p "URL du futur site (sans http://www.) ? " urlsite
 # VARS
 
 pathtoinstall="${rootpath}${foldername}/"
-url="http://lgm.dev/$foldername/"
+url="http://localhost/$foldername/"
 dbname=$foldername
 dbuser=root
 dbpass=root
