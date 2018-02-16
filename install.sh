@@ -268,7 +268,7 @@ wp post create --post_type=page --post_title='Mentions Légales' --post_status=p
 #Création articles
 if [ "$articles" = "o" ]; then
 	bot "Je crée des articles"
-    curl http://loripsum.net/api/5 | wp post generate --post_content --count=5
+    curl https://loripsum.net/api/10/long/headers/code/ul/ol/link/bq/decorate | wp post generate --post_content --count=5
 fi
 
 bot "Je modifie les options"
