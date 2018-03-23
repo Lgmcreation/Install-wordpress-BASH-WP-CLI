@@ -228,7 +228,7 @@ wp theme activate $foldername
 # Plugins install
 bot "J'installe les plugins"
 wp plugin install simple-page-ordering --activate
-wp plugin install block-bad-queries --activate
+wp plugin install block-bad-queries
 wp plugin install bea-sanitize-filename --activate
 wp plugin install sf-move-login
 wp plugin install limit-login-attempts
@@ -268,7 +268,7 @@ wp post create --post_type=page --post_title='Mentions Légales' --post_status=p
 #Création articles
 if [ "$articles" = "o" ]; then
 	bot "Je crée des articles"
-    curl https://loripsum.net/api/10/long/headers/code/ul/ol/link/bq/decorate | wp post generate --post_content --count=5
+    curl https://loripsum.net/api/10/long/headers/code/ul/ol/link | wp post generate --post_content --count=5
 fi
 
 bot "Je modifie les options"
@@ -346,7 +346,10 @@ cp  $htaccess_content_upload $pathtoinstall/wp-content/uploads/.htaccess
 #Ajout robots.txt
 bot "Je crée le fichier robots.txt"
 cp  $robots $pathtoinstall/robots.txt
-
+if [ -n "$urlsite" ]
+then
+    sed -i.bak "s/monsite\.com/${urlsite}/g" robots.txt
+fi
 
 #Upload de mes fichiers json de base pour ACF option
 bot "Configuration ACF option"
