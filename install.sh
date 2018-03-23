@@ -349,6 +349,7 @@ cp  $robots $pathtoinstall/robots.txt
 if [ -n "$urlsite" ]
 then
     sed -i.bak "s/monsite\.com/${urlsite}/g" robots.txt
+		rm -f robots.txt.bak
 fi
 
 #Upload de mes fichiers json de base pour ACF option
@@ -388,13 +389,9 @@ echo -e "DB prefix 		: $dbprefix"
 echo -e "WP_DEBUG 		: TRUE"
 echo "--------------------------------------"
 
+# Ouvre Sublime text
+code .
+npm instal
 # Ouvre le site sur ma page web
 open $url
 open "${url}wp-admin"
-
-#ouvre fenetre terminal et lance npm install pour gulp (window 1 pour rester sur la meme fenetre ouverte)
-osascript -e 'tell application "Terminal"
- do script "cd '$pathtoinstall'/wp-content/themes/'$foldername'" activate
-  do script "npm install" in window 1
-end tell'
-
